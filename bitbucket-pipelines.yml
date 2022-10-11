@@ -1,0 +1,67 @@
+image: node:16
+
+pipelines:
+  # pull-requests:
+  #   feature/*: #any branch with a feature prefix
+  #     - step:
+  #         script:
+  #           - ...
+  #   fix/*:
+  #     - step:
+  #         script:
+  #           - ...
+  #   hotfix/*:
+  #     - step:
+  #         script:
+  branches:
+    development:
+      - step:
+          name: Deploy to backoffice Server
+          deployment: Dev
+          script:
+            - pipe: atlassian/ssh-run:0.4.1
+              variables:
+                SSH_USER: $SSH_USER
+                SERVER: $BASTION_HOST
+                COMMAND: |
+                  ssh $SSH_USER@$APP_SERVER \
+                  "cd digicel-backoffice-portal;
+                  git pull origin development;
+                  npm install;
+                  npm update;
+                  npm run build;
+                  pm2 restart nextjs;"
+    staging:
+      - step:
+          name: Deploy to backoffice Server
+          deployment: Staging
+          script:
+            - pipe: atlassian/ssh-run:0.4.1
+              variables:
+                SSH_USER: $SSH_USER
+                SERVER: $BASTION_HOST
+                COMMAND: |
+                  ssh $SSH_USER@$APP_SERVER \
+                  "cd digicel-backoffice-portal;
+                  git pull origin staging;
+                  npm install;
+                  npm update;
+                  npm run build;
+                  pm2 restart nextjs;"
+    main:
+      - step:
+          name: Deploy to backoffice Server
+          deployment: Production
+          script:
+            - pipe: atlassian/ssh-run:0.4.1
+              variables:
+                SSH_USER: $SSH_USER
+                SERVER: $BASTION_HOST
+                COMMAND: |
+                  ssh $SSH_USER@$APP_SERVER \
+                  "cd digicel-backoffice-portal;
+                  git pull origin main;
+                  npm install;
+                  npm update;
+                  npm run build;
+                  pm2 restart nextjs;"

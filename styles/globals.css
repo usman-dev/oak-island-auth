@@ -1,0 +1,139 @@
+html,
+body {
+  min-height: 100%;
+}
+
+#__next {
+  height: 100%;
+}
+
+.main > div:nth-of-type(2) > div:nth-of-type(2) > div {
+  min-height: 10vh;
+  max-height: 70vh !important;
+}
+
+code {
+  font-family: 'Inter', sans-serif, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue';
+  padding: 0.1rem 0.4rem;
+  font-size: 90%;
+  color: #d400ff;
+  border-radius: 0.1335rem;
+}
+code:not([class*='language-']):before,
+code:not([class*='language-']):after {
+  content: '`';
+}
+code[class*='language-'] {
+  padding: 0;
+}
+
+/* ======   my css ========= */
+.nav-header {
+  background: #ff4c51;
+}
+main.layout-page-content:before {
+  background: #000;
+  content: ' ';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 64px;
+  height: 40px;
+  z-index: -1;
+}
+
+.actions-right .MuiSvgIcon-root {
+  fill: #fff !important;
+}
+
+header.MuiPaper-root.MuiPaper-elevation {
+  background: #000;
+}
+
+.scrollbar-container {
+  background: #ff4c51;
+}
+th.MuiTableCell-root.MuiTableCell-head:last-child span {
+  float: right;
+}
+
+li a.MuiListItemButton-root {
+  border-radius: 100px !important;
+}
+.MuiListItemButton-root:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+.MuiTypography-root {
+  font-size: 0.9rem !important;
+}
+.MuiListItem-root p.MuiTypography-root {
+  color: #fff;
+}
+li.MuiListItem-root {
+  padding-left: 15px !important ;
+}
+
+.imageFit {
+  object-fit: contain;
+}
+
+.MuiBox-root
+  .scrollbar-container
+  .MuiListItem-root
+  .MuiListItemButton-root
+  .MuiListItemIcon-root
+  .MuiSvgIcon-root {
+  color: #fff;
+  fill: #fff;
+}
+
+.MuiListItem-root .MuiListItemButton-root.active,
+.MuiListItem-root .MuiListItemButton-root.active:hover {
+  background: #fff !important;
+}
+.MuiListItem-root .MuiListItemButton-root.active svg,
+.MuiListItem-root .MuiListItemButton-root.active:hover svg {
+  fill: #ff3636 !important;
+}
+.MuiListItem-root
+  .MuiListItemButton-root.active
+  p.MuiTypography-root.MuiTypography-body1,
+.MuiListItem-root
+  .MuiListItemButton-root.active:hover
+  p.MuiTypography-root.MuiTypography-body1 {
+  color: #ff4c51 !important;
+}
+.css-ku0lyd {
+  background: none !important;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+  height: 10px !important;
+  background: #ff4c51;
+}
+
+@media handheld, only screen and (max-width: 1200px) {
+  .actions-left .MuiSvgIcon-root {
+    fill: #fff !important;
+    color: #fff !important;
+  }
+  .MuiBox-root.css-zf9gw9,
+  .MuiBox-root.css-1rf96ts {
+    background: #ff4c51;
+  }
+
+  .MuiBox-root
+    .scrollbar-container
+    .MuiListItem-root
+    .MuiListItemButton-root
+    .MuiListItemIcon-root
+    .MuiSvgIcon-root {
+    color: #fff;
+    fill: #fff;
+  }
+  .MuiListItemIcon-root .MuiSvgIcon-root {
+    color: #fff;
+    fill: #fff;
+  }
+}
